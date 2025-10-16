@@ -32,7 +32,7 @@ def main(data: str, eroot: str) -> tuple[list[list[int]], list[list[int]], list[
     for _ in range(1, n):
         transit_r = transit_r | (transit_r @ adj)
     r3 = (transit_r & ~adj).astype(int)
-    r3 = r3.T
+    r4 = r3.T
 
     r2_b = r2.astype(bool)
     r5 = np.zeros((n, n), dtype=int)
