@@ -41,7 +41,7 @@ def main(data: str, eroot: str) -> tuple[list[list[int]], list[list[int]], list[
             if np.any(r2_b[i] & r2_b[j]):
                 r5[i, j] = 1
                 r5[j, i] = 1
-    return (r1.tolist(), r2.tolist(), r3.tolist(), r3.tolist(), r5.tolist())
+    return (r1.tolist(), r2.tolist(), r3.tolist(), r4.tolist(), r5.tolist())
 
 if __name__ == "__main__":
     curr_dir = os.path.dirname(os.path.abspath(__file__))
