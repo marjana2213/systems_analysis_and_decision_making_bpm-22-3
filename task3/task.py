@@ -55,7 +55,7 @@ def contradiction_core(mat1: np.ndarray, mat2: np.ndarray) -> list[list[int]]:
     return pairs
 
 
-def compare_rankings(raw_a: str, raw_b: str) -> list[list[int]]:
+def main(raw_a: str, raw_b: str) -> list[list[int]]:
     data_a = parse_ranking(raw_a)
     data_b = parse_ranking(raw_b)
 
@@ -71,7 +71,7 @@ def compare_rankings(raw_a: str, raw_b: str) -> list[list[int]]:
 
 
 def output(name1: str, name2: str, pairs: list[list[int]]):
-    header = f"[ {name1} vs {name2} ]"
+    header = f"[ {name1} & {name2} ]"
     print(header)
     if not pairs:
         print("противоречий не обнаружено\n")
@@ -86,6 +86,6 @@ if __name__ == "__main__":
     text_b = load_text("range_b.json")
     text_c = load_text("range_c.json")
 
-    output("A", "B", compare_rankings(text_a, text_b))
-    output("A", "C", compare_rankings(text_a, text_c))
-    output("B", "C", compare_rankings(text_b, text_c))
+    output("A", "B", main(text_a, text_b))
+    output("A", "C", main(text_a, text_c))
+    output("B", "C", main(text_b, text_c))
